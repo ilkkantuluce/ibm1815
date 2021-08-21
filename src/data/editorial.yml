@@ -1,0 +1,418 @@
+# Title
+# Sentence style capitalization
+# EXAMPLE: A smarter contact center for employee and customer experience
+title: A beautiful future depends on data and AI
+
+# Description
+# Sentence style capitalization
+# EXAMPLE: How to incorporate market-leading AI
+description: This smart paper framework aims to facilitate content entry, increase speed to market, be scaleable while adhering to IBM's design and accessibility standards, and build out previews quickly and often throughout the production lifecycle.
+
+# Intended URL
+# Lowercase
+# No special characters
+# EXAMPLE: https://ibm.com/cloud/services/smarter-contact-center
+# Exclude the last slash 
+url: https://placeholder.com
+
+# Keywords
+# Enter 3-5 words or phrases separated by commas
+# EXAMPLE: contact center, call center, cognitive care, AI, Salesforce
+keywords: contact center, call center, cognitive care, AI, Salesforce
+
+# Owner name
+# Enter name of person responsible for the smart paper’s content
+# EXAMPLE: Grace Konrad
+owner_name: Grace Konrad
+
+# Tweet
+# Enter tweet language; defaults to smart paper description
+# 160 character maximum
+tweet: This is a sample tweet
+
+# Tweet via
+# Enter Twitter account without “@”; defaults to IBM
+# 160 character maximum
+tweet_via: IBMWatson
+
+# Tweet hashtags
+# Enter hashtags separated by commas excluding “#”
+# Example: computing, computerscience, datamatters
+tweet_hashtags: placeholder, placeholder
+
+# Carbon Theme
+# Options: gray10, gray90 or gray100
+theme: 
+
+# Editorial / Section 01
+# All the below fields are required.
+
+# Section 01 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_01_title: A festival rocks with data
+
+# Section 01 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_01_short_title: section-1
+
+# Section 01 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_01_hover_text: Organizers realized that analyzing data was key to a better 8-day festival
+
+# Section 01 Reading time
+# Enter word count of section
+section_01_reading_time: 500
+
+# Editorial / Section 02
+# All the below fields are required.
+
+# Section 02 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_02_title: AI celebrates “love, life and togetherness”
+
+# Section 02 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_02_short_title: section-2
+
+# Section 02 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_02_hover_text: Weather, transactional, buyer preference data — put to work
+
+# Section 02 Reading time
+# Enter word count of section
+section_02_reading_time: 400
+
+# Editorial / Section 03
+# All the below fields are required.
+
+# Section 03 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_03_title: Insights revealed, privacy kept
+
+# Section 03 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_03_short_title: section-3
+
+# Section 03 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_03_hover_text: Data drives insights while 60,000 attendees’ information stays private
+
+# Section 03 Reading time
+# Enter word count of section
+section_03_reading_time: 200
+
+# Editorial / Section 04
+# All the below fields are required.
+
+# Section 04 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_04_title:  The most beloved bar drink?
+
+# Section 04 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_04_short_title: section-4
+
+# Section 04 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_04_hover_text: AI models match stock to consumption — using 750,000 transactions to reduce waste
+
+# Section 04 Reading time
+# Enter word count of section
+section_04_reading_time: 500
+
+# Editorial / Section 05
+# All the below fields are required.
+
+# Section 05 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_05_title: test
+
+# Section 05 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_05_short_title: test
+
+# Section 05 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_05_hover_text: test
+
+# Section 05 Reading time
+# Enter word count of section
+section_05_reading_time: 500
+
+# Editorial / Section 06
+# All the below fields are required.
+
+# Section 06 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_06_title: test
+
+# Section 06 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_06_short_title: test
+
+# Section 06 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_06_hover_text: test
+
+# Section 06 Reading time
+# Enter word count of section
+section_06_reading_time: 500
+
+# Editorial / Section 07
+# All the below fields are required.
+
+# Section 07 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_07_title:
+
+# Section 07 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_07_short_title:
+
+# Section 07 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_07_hover_text:
+
+# Section 07 Reading time
+# Enter word count of section
+section_07_reading_time:
+
+# Editorial / Section 08
+# All the below fields are required.
+
+# Section 08 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_08_title:
+
+# Section 08 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_08_short_title:
+
+# Section 08 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_08_hover_text:
+
+# Section 08 Reading time
+# Enter word count of section
+section_08_reading_time:
+
+# Editorial / Section 09
+# All the below fields are required.
+
+# Section 09 Title
+# Sentence style capitalization
+# EXAMPLE: The landscape
+section_09_title:
+
+# Section 09 Short title
+# Sentence style capitalization
+# 36 characters maximum
+# Visible in browser URL bar – needed for deep linking
+# EXAMPLE: Landscape
+section_09_short_title:
+
+# Section 09 Hover text
+# Sentence style capitalization
+# 110 characters limit
+# EXAMPLE: How AI can deliver powerful new ways for you to engage customers
+section_09_hover_text:
+
+# Section 09 Reading time
+# Enter word count of section
+section_09_reading_time:
+
+# Editorial / Next steps 01
+# All the below fields are required.
+
+# Next steps 01 Title
+# Sentence style capitalization
+# EXAMPLE: AI for Customer Service
+next_step_01_title: Expert AI guidance
+
+# Next steps 01 Teaser
+# Sentence style capitalization
+# EXAMPLE: How to provide complete customer service with market-leading AI
+next_step_01_teaser: AI is not magic. Learn how to overcome common obstacles to success.
+
+# Next steps 01 CTA text
+# Sentence style capitalization
+# EXAMPLE: Get started
+next_step_01_cta_text: Download free
+
+# Next steps 01 CTA URL
+# EXAMPLE: https://www.ibm.com/watson/ai-customer-service
+next_step_01_cta_url: https://www.ibm.com/account/reg/us-en/signup?formid=urx-41166&_ga=2.10671741.895114211.1629492429-1982335895.1629304970
+
+# Next steps 01 CTA Icon Type
+# Available options: blog, download, pdf, external, video and forward (default) 
+# EXAMPLE: download
+next_step_01_cta_icon_type: forward
+
+# Editorial / Next steps 02
+# All the below fields are required.
+
+# Next steps 02 Title
+# Sentence style capitalization
+# EXAMPLE: AI for Customer Service
+next_step_02_title: Accelerate your journey to AI
+
+# Next steps 01 Teaser
+# Sentence style capitalization
+# EXAMPLE: How to provide complete customer service with market-leading AI
+next_step_02_teaser: Use IBM’s proven methodology to turn your AI aspirations into outcomes.
+
+# Next steps 02 CTA text
+# Sentence style capitalization
+# EXAMPLE: Get started
+next_step_02_cta_text: Explore now
+
+# Next steps 02 CTA URL
+# EXAMPLE: https://www.ibm.com/watson/ai-customer-service
+next_step_02_cta_url: https://www.ibm.com/analytics/journey-to-ai?_ga=2.259191107.895114211.1629492429-1982335895.1629304970
+
+# Next steps 02 CTA Icon Type
+# Available options: blog, download, pdf, external, video and forward (default) 
+# EXAMPLE: download
+next_step_02_cta_icon_type: forward
+
+# Editorial / Next steps 03
+# All the below fields are required.
+
+# Next steps 03 Title
+# Sentence style capitalization
+# EXAMPLE: AI for Customer Service
+next_step_03_title: AI self-assessment
+
+# Next steps 03 Teaser
+# Sentence style capitalization
+# EXAMPLE: How to provide complete customer service with market-leading AI
+next_step_03_teaser: Track your journey to AI and move your business forward.
+
+# Next steps 03 CTA text
+# Sentence style capitalization
+# EXAMPLE: Get started
+next_step_03_cta_text: Take assessment
+
+# Next steps 03 CTA URL
+# EXAMPLE: https://www.ibm.com/watson/ai-customer-service
+next_step_03_cta_url: https://ai-journey.mybluemix.net/?_ga=2.259191107.895114211.1629492429-1982335895.1629304970
+
+# Next steps 03 CTA Icon Type
+# Available options: blog, download, pdf, external, video and forward (default) 
+# EXAMPLE: download
+next_step_03_cta_icon_type: forward
+
+# Design / Hero
+# All the below fields are required.
+
+# Hero image background
+# Enter filename and extension - any one of this image's cuts
+# EXAMPLE: CX-SmartCover-1024px.jpg
+hero_background: hero-background-2560w.jpg
+
+# Hero video background
+# Enter MP4 filename and extension
+# This field overrides Hero image background
+# EXAMPLE: bg-video.mp4
+hero_background__video: 
+
+# Hero ALT text
+# Enter an accessibility description for the hero background
+# EXAMPLE: Woman sitting at computer with a cup of coffee
+hero_alt: Lorem ipsum dolor sit amet nunc convallis lobortis
+
+# Hero mask
+# Should there be mask over the image?
+# Enter "yes" or "no"
+# A mask helps provide contrast between the hero background and text
+hero_mask: yes
+
+# Design / Next steps
+# All the below fields are required.
+
+# Next steps 01 Thumbnail
+# Enter filename and extension - any one of this image's cuts
+# EXAMPLE: thumb-1-375px.jpg
+next_step_01_thumbnail: step-1-375w.jpg
+
+# Next steps 01 Thumbnail ALT text
+# Enter an accessibility description for the thumbnail
+# EXAMPLE: Woman sitting at computer with a cup of coffee
+next_step_01_alt: Expert AI guidance
+
+# Next steps 02 Thumbnail
+# Enter filename and extension - any one of this image's cuts
+# EXAMPLE: thumb-2-375w.jpg
+next_step_02_thumbnail:  step-2-375w.jpg
+
+# Next steps 02 Thumbnail ALT text
+# Enter an accessibility description for the thumbnail
+# EXAMPLE: Woman sitting at computer with a cup of coffee
+next_step_02_alt: Accelerate your journey to AI
+
+# Next steps 03 Thumbnail
+# Enter filename and extension - any one of this image's cuts
+# EXAMPLE: thumb-3-375w.jpg
+next_step_03_thumbnail: step-3-375w.jpg
+
+# Next steps 03 Thumbnail ALT text
+# Enter an accessibility description for the thumbnail
+# EXAMPLE: Woman sitting at computer with a cup of coffee
+next_step_03_alt: AI self-assessment
+
+# Country
+country: US
+
+# Language
+language: en-US
+
+# This info will go to the digitalData siteID and IBMAnalytics settings name
+analytics: GlobalMarketing

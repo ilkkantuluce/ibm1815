@@ -1,0 +1,36 @@
+.component--citation {
+  color: var(--text-01);
+  max-width: 90%;
+  position: relative;
+  font-size: 0.875rem;
+  padding-top: 1rem;
+  line-height: 1.5;
+  padding-left: 0.75rem;
+
+  sup {
+      font-size: 0.5rem!important;
+      position: absolute;
+      top: 1rem;
+      left: 0;
+  }
+
+  .bx--link {
+      font-size: 0.875rem;
+      display: inline;
+      line-height: 1.5;
+  }
+
+  .bx--link-with-icon {
+      font-size: 0.875rem;
+      display: inline;
+      line-height: 1.5;
+
+      svg {
+          position: relative;
+          top: 2px;
+          margin-left: 0.25rem;
+          width: 1rem;
+          height: 1rem;
+      }
+  }
+}

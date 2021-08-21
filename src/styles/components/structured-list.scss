@@ -1,0 +1,27 @@
+/* Structured List */
+
+@import 'carbon-components/scss/components/structured-list/_structured-list.scss';
+
+.component--structured-list {
+  margin-left: -1rem;
+  margin-right: -1rem;
+
+  .bx--structured-list {
+      max-width: 768px!important;
+      margin-bottom: 0 !important;
+
+      .bx--structured-list-th {
+        color: var(--text-01);
+      }
+      .bx--structured-list-td {
+        color: var(--text-02);
+      }
+      .bx--structured-list-row--header-row {
+        border-bottom: 1px solid var(--ui-03);
+      }
+      .bx--structured-list-row{
+        border-bottom: 1px solid var(--ui-03);
+      }
+  }
+}
+

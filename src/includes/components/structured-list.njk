@@ -1,0 +1,95 @@
+{% macro structuredList (
+	structuredListHeading1, structuredListHeading2,
+	structuredListItem1Heading, structuredListItem1Copy,
+	structuredListItem2Heading, structuredListItem2Copy,
+	structuredListItem3Heading, structuredListItem3Copy,
+	structuredListItem4Heading, structuredListItem4Copy,
+	structuredListItem5Heading, structuredListItem5Copy,
+	structuredListItem6Heading, structuredListItem6Copy,
+	structuredListItem7Heading, structuredListItem7Copy,
+	structuredListItem8Heading, structuredListItem8Copy,
+	structuredListItem9Heading, structuredListItem9Copy,
+	structuredListItem10Heading, structuredListItem10Copy
+)%}
+<div class="component component--structured-list">
+	<section class="bx--structured-list">
+		<div class="bx--structured-list-thead">
+			<div class="bx--structured-list-row bx--structured-list-row--header-row">
+				<div class="bx--structured-list-th">{{structuredListHeading1}}</div>
+				<div class="bx--structured-list-th">{{structuredListHeading2}}</div>
+			</div>
+		</div>
+		<div class="bx--structured-list-tbody">
+			{% if (structuredListItem1Heading) or (structuredListItem1Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem1Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem1Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem2Heading) or (structuredListItem2Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem2Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem2Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem3Heading) or (structuredListItem3Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem3Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem3Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem4Heading) or (structuredListItem4Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem4Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem4Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem5Heading) or (structuredListItem5Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem5Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem5Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem6Heading) or (structuredListItem6Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem6Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem6Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem7Heading) or (structuredListItem7Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem7Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem7Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem8Heading) or (structuredListItem8Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem8Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem8Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem9Heading) or (structuredListItem9Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem9Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem9Copy | safe}}</div>
+				</div>
+			{% endif %}
+
+			{% if (structuredListItem10Heading) or (structuredListItem10Copy) %}
+				<div class="bx--structured-list-row">
+					<div class="bx--structured-list-td">{{structuredListItem10Heading}}</div>
+					<div class="bx--structured-list-td">{{structuredListItem10Copy | safe}}</div>
+				</div>
+			{% endif %}
+		</div>
+	</section>
+</div>
+{% endmacro %}

@@ -1,0 +1,65 @@
+.component--callout-quote {
+    .bx--quote {
+        max-width: 90%;
+
+         @media (min-width: 672px) {
+            max-width: 75%;
+         }
+    }
+
+    .bx--quote__copy {
+        position: relative;
+        font-size: 2rem;
+        line-height: 1.25;
+        font-family: 'IBM Plex Serif', serif;
+        font-weight: 300;
+        padding-left: 0.75rem;
+        left: -0.75rem;
+        
+
+        @media (min-width: 672px){
+            font-size: 3rem;
+            padding-left: 1.125rem;
+            left: -1.125rem;
+        }
+
+        .bx--quote__mark {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        sup {
+            font-size: 0.75rem;
+        }
+    }
+
+    .bx--quote__source-heading {
+        font-weight: 600;
+        margin-top: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .bx--quote__source-body {
+        line-height: 1.5;
+    }
+
+    .bx--quote__footer {
+        margin-top: 1.5rem;
+        .bx--link{
+            align-items: center;
+        }
+        .bx--link-with-icon svg{
+            margin-left: 0.5rem;
+        }
+    }
+
+    &.no-quotes {
+        .bx--quote__copy,
+        .bx--quote__source,
+        .bx--quote__footer {
+            padding-left: 0;
+            left: 0rem;
+        } 
+    }
+}

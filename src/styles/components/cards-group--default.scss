@@ -1,0 +1,102 @@
+.component--cards-group--default {
+  margin-left: -1rem;
+  margin-right: -1rem;
+
+@media (min-width: 672px){
+  display: flex;
+  flex-wrap: wrap;
+
+  .bx--card {
+    width: 50%;
+          padding-right: 0.0325rem;
+          padding-left: 0.0325rem;
+  }
+}
+
+@media (min-width: 1056px){
+
+  .bx--card {
+    width: 33.3333%;
+  }
+}
+.bx--card {
+    display: flex;
+    
+    margin-bottom: 0.0650rem;
+    overflow: hidden;
+
+    &.bx--tile--clickable {
+      
+      &:hover {
+        .bx--card__wrapper {
+          background-color: var(--hover-ui);
+        }
+        
+      }
+
+          &:focus {
+            outline: 2px solid var(--focus);
+            outline-offset: -2px;
+          }
+    }
+
+    &.bx--card--inverse {
+      
+      .bx--card__wrapper {
+				background-color: var(--ui-03);
+				color: var(--text-01);
+			}
+
+			&:hover {
+				.bx--card__wrapper {
+					background-color:var(--hover-ui);
+				}
+			}
+
+			.bx--card__footer {
+				svg {
+					fill: var(--link-01);
+				}
+			}
+    }
+
+    &.bx--card--cta {
+      .bx--card__wrapper {
+        justify-content: space-between;
+      }
+    }
+
+    .bx--card__wrapper {
+      color: var(--text-01);
+      background-color: var(--ui-01);
+      padding: 1rem;
+      flex-direction: column;
+      min-height: 10rem;
+      display: flex;
+      flex: 1 1 0%;
+      transition: background-color 300ms ease-in-out;
+    }
+
+    .bx--card__heading {
+      margin-bottom: 2rem;
+      width: 90%;
+      max-width: 40rem;
+      font-size: 1.25rem;
+      line-height: 140%;
+    }
+
+    .bx--card__copy {
+      flex-grow: 1;
+    }
+
+    .bx--card__footer {
+      margin-top: 4rem;
+
+      svg {
+        fill: var(--link-01);
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,8 @@
+{% macro image (imageFile, imageAlt, caption ) %}
+  <figure class="component component--image" role="figure" aria-label="{{imageAlt}}">
+  	<img alt="{{imageAlt}}" class="lazy" data-srcset="images/{{imageFile | imageCut}}-768w.jpg 768w,images/{{imageFile | imageCut}}-1024w.jpg 1024w,images/{{imageFile | imageCut}}-1366w.jpg 1366w" src="images/{{imageFile | imageCut}}-768w.jpg">
+  	{% if caption or credit %}
+  	<figcaption>{{caption or credit}}</figcaption>
+  	{% endif %}
+  </figure>
+{% endmacro %}

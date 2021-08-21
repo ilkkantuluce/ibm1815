@@ -1,0 +1,43 @@
+@import 'carbon-components/scss/components/accordion/_accordion.scss';
+
+/* Accordion */
+.component.bx--accordion {
+  padding-top: 0;
+  padding-bottom: 0;
+  width: 100%;
+  max-width: 768px;
+
+
+  .bx--accordion__heading:hover::before {
+    background: var(--hover-ui);
+  }
+  .bx--accordion__heading:focus::before {
+    border-color: var(--focus);
+  }
+  .bx--accordion__title {
+    color: var(--text-01);
+  }
+  .bx--accordion__content {
+    color: var(--text-01);
+    line-height: 1.5;
+    font-size: 0.875rem;
+  }
+  .bx--accordion__arrow {
+    fill: var(--icon-01);
+  }
+  .bx--accordion__item {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      border-top: unset;
+      border-bottom: 1px solid var(--ui-03);
+  }
+  
+}
+
+p + .component.bx--accordion .bx--accordion__item,
+h3 + .component.bx--accordion .bx--accordion__item,
+h4 + .component.bx--accordion .bx--accordion__item {
+  border-top: 1px solid var(--ui-03);
+}
+
+

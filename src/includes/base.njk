@@ -1,0 +1,157 @@
+---js
+{
+  currentDate: function() {
+    return (new Date());
+  }
+}
+---
+<!DOCTYPE html>
+<html lang="{{editorial.language}}">
+     <head>
+        {# basic meta  #}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index,follow">
+        <link rel="shortcut icon" href="https://www.ibm.com/favicon.ico">
+
+        {# terms meta  #}
+        <meta name="dcterms.date" content="2015-10-01">
+        <meta name="dcterms.rights" content="© Copyright IBM Corporation 2020">
+
+        {# geo meta  #}
+        <meta name="geo.country" content="{{editorial.country}}">
+        <meta property="og:locale" content="{{editorial.language}}">
+
+        {# title meta  #}
+        <title>{{editorial.title}} | IBM</title>
+        <meta property="og:title" content="{{editorial.title}} | IBM">
+
+        {# description meta  #}
+        <meta name="description" content="{{editorial.description}}">
+        <meta property="og:description" content="{{editorial.description}}">
+
+        {# keywords meta  #}
+        <meta name="keywords" content="{{editorial.keywords}}">
+        <meta name="news_keywords" content="{{editorial.keywords}}">
+
+        {# author + publisher meta  #}
+        <meta name="author" content="IBM">
+        <meta property="article:author" content="IBM">
+        <meta property="article:publisher" content="IBM">
+
+         {# url meta  #}
+        <link rel="canonical" href="{{editorial.url }}">
+        <meta property="og:url" content="{{editorial.url}}">
+
+        {# twitter meta  #}
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@IBM">
+        <meta name="twitter:creator" content="IBM">
+        <meta name="twitter:title" content="{{editorial.title}}">
+        <meta name="twitter:description" content="{{editorial.description}}">
+
+         {# image meta  #}
+        <meta itemprop="image" content="{{editorial.url}}/images/{{editorial.hero_background | imageCut}}-1366w.jpg">
+        <meta property="og:image" content="{{editorial.url}}/images/{{editorial.hero_background | imageCut}}-1366w.jpg">
+        <meta property="og:image:width" content="1366">
+        <meta property="og:image:height" content="768">
+
+        {# source meta  #}
+        <meta name="source" content="IBM">
+        <meta name="application-name" content="IBM">
+        <meta property="og:site_name" content="IBM">
+
+         {# fonts  #}
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,600;1,400&family=IBM+Plex+Serif:wght@300&display=swap" rel="stylesheet">
+
+        
+        <!-- ddo -->
+        <script>
+        window._ibmAnalytics = {
+          settings: {
+            name: '{{editorial.analytics}}'
+          }
+        };
+
+        digitalData = {
+            page:{
+                category:{
+                    primaryCategory:'PC100'
+                },
+                pageInfo:{
+                    hotjar: {
+                        enabled: true
+                    },
+                    language: '{{editorial.language}}',
+                    effectiveDate:'{{page.date.toUTCString() | formatDate}}',
+                    publishDate: '{{currentDate() | formatDate}}',
+                    expiryDate: '{{page.date.toUTCString() | expiryDate}}',
+                    publisher:'IBM Corporation',
+                    version: 'Carbon for IBM.com',
+                    ibm:{
+                        contentDelivery:'HTML',
+                        contentProducer: '{{editorial.owner_name}}/{% if editorial.country %}{{editorial.country}}/{% endif %}IBM',
+                        country:'{{editorial.country}}',
+                        owner:'{{editorial.owner_name}}/{% if editorial.country %}{{editorial.country}}/{% endif %}IBM',
+                        siteID: 'IBM_{{editorial.analytics}}'
+                    }
+                }
+            }
+        };
+        </script>
+        <script src="https://1.www.s81c.com/common/stats/ibm-common.js" async></script>
+    </head>
+
+    <body id="smartpaper--the-grid" class="{% if editorial.theme == 'gray100' %} theme--gray100 {% elif editorial.theme == 'gray90' %} theme--gray90 {% elif editorial.theme == 'gray10' %}  theme--gray10 {% else %} theme--white {% endif %}">
+        
+        {# preloader  #}
+        {% include "blocks/preloader.njk" %}
+
+        {# logo for print #}
+        <svg style="display: none;" id="print-ibm-logo" height="23" viewBox="0 0 58 23" width="58" xmlns="http://www.w3.org/2000/svg"><path d="M58 21.467V23h-7.632v-1.533H58zm-18.316 0V23h-7.631v-1.533h7.631zm5.955 0L45.025 23l-.606-1.533h1.22zm-17.097 0A6.285 6.285 0 0 1 24.391 23H12.21v-1.533zm-17.858 0V23H0v-1.533h10.684zm29-3.067v1.533h-7.631V18.4h7.631zm7.148 0l-.594 1.533H43.82l-.598-1.533h3.609zm-16.764 0a5.719 5.719 0 0 1-.64 1.533H12.21V18.4zm-19.384 0v1.533H0V18.4h10.684zM58 18.4v1.533h-7.632V18.4H58zm-3.053-3.067v1.534h-4.579v-1.534h4.58zm-15.263 0v1.534h-4.579v-1.534h4.58zm8.345 0l-.6 1.534h-4.806l-.604-1.534h6.01zm-18.174 0c.137.49.213 1.003.213 1.534h-5.647v-1.534zm-10.013 0v1.534h-4.579v-1.534h4.58zm-12.21 0v1.534h-4.58v-1.534h4.58zm47.315-3.066V13.8h-4.579v-1.533h4.58zm-15.263 0V13.8h-4.579v-1.533h4.58zm9.541 0l-.597 1.533h-7.22l-.591-1.533h8.408zm-21.248 0c.527.432.98.951 1.328 1.533H15.263v-1.533zm-20.345 0V13.8h-4.58v-1.533h4.58zM44.599 9.2l.427 1.24.428-1.24h9.493v1.533h-4.579V9.324l-.519 1.41h-9.661l-.504-1.41v1.41h-4.579V9.2H44.6zm-36.967 0v1.533h-4.58V9.2h4.58zm21.673 0a5.95 5.95 0 0 1-1.328 1.533H15.263V9.2zm25.642-3.067v1.534h-8.964l.54-1.534h8.424zm-11.413 0l.54 1.534h-8.969V6.133h8.43zm-13.466 0c0 .531-.076 1.045-.213 1.534H24.42V6.133zm-10.226 0v1.534h-4.579V6.133h4.58zm-12.21 0v1.534h-4.58V6.133h4.58zm34.845-3.066l.53 1.533H32.054V3.067h10.424zm15.523 0V4.6H47.04l.55-1.533H58zm-28.573 0c.284.473.504.988.641 1.533H12.211V3.067zm-18.743 0V4.6H0V3.067h10.684zM41.406 0l.54 1.533h-9.893V0h9.353zM58 0v1.533h-9.881L48.647 0H58zM24.39 0c1.601 0 3.057.581 4.152 1.533H12.211V0zM10.685 0v1.533H0V0h10.684z" fill="#161616" fill-rule="evenodd"></path></svg>
+
+
+      
+
+        {# masthead  #}
+        <dds-masthead-container></dds-masthead-container>
+        
+         {# content  #}
+        {{ content | safe }}
+
+        {# next steps  #}
+        {% include 'blocks/recirculation.njk' %}
+
+        {# footer #}
+        <dds-footer-container disable-locale-button="true"></dds-footer-container>
+
+         {# scripts  #}
+        {% include "webpack/scripts.njk" %}
+
+         {# print #}
+        <style>
+            @media print {
+                #print-ibm-logo {
+                    display: block !important;
+                }
+                .bx--grid {
+                    padding-right: 0 !important;
+                    padding-left: 0 !important;
+                }
+                dds-masthead-container {
+                    display: none !important;
+                }
+                .block--recirculation {
+                    display: none !important;
+                }
+                .component {
+                    display: none !important;
+                }
+                dds-footer-container {
+                    display: none !important;
+                }
+            }
+        </style>
+    </body>
+</html>

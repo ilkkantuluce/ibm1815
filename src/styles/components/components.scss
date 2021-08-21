@@ -1,0 +1,28 @@
+.component {
+  position: relative;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  max-width: 768px;
+
+  @media(min-width: 1056px){
+      max-width: 100%;
+  }
+}
+
+.component + .component {
+  padding-top: 3rem;
+}
+
+h3 + .component--image,
+h4 + .component--image {
+  padding-top: 0;
+}
+
+.component + p {
+  margin-top: 1.5rem;
+}
+
+
+
+
+

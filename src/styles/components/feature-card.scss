@@ -1,0 +1,101 @@
+.component--feature-card {
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    @media (min-width: 1056px){
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+    
+    .bx--feature-card {
+        max-width: 768px;
+
+        .bx--feature-card__card {
+            display: block;
+            background-color: #393939;
+
+            .bx--image {
+                position: relative;
+                overflow: hidden;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 0;
+                    padding-bottom: 56.25%;
+                }
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .bx--card__wrapper {
+                background-color: #393939;
+                color: #fff;
+                padding: 1rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                transition: background-color 300ms ease-in-out;
+
+                .bx--card__heading {
+                    width: 90%;
+                    max-width: 40rem;
+                    font-size: 1.25rem;
+                    line-height: 1.5;
+                    margin-bottom: 2rem;
+
+                    sup {
+                        font-size: 0.875rem;
+                    }
+                }
+
+                .bx--card__footer {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    svg {
+                        fill: var(--feature-card-link-01);
+                    }
+                }
+            }
+
+            &.bx--feature-card--clickable {
+                &:hover {
+                    .bx--card__wrapper {
+                        background-color: #4c4c4c;
+                    }
+                }
+                &:focus {
+                  outline: 2px solid var(--focus);
+                  outline-offset: 2px;
+                }
+            }
+
+            @media (min-width: 568px){
+                display: flex;
+
+                .bx--image {
+                    width: 50%;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                    
+                    &:before {
+                        padding-bottom: 100%;
+                    }
+                }
+
+                .bx--card__wrapper {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>cloud--data-ops</title>
+    <defs>
+        <filter color-interpolation-filters="auto" id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.847000 0 0 0 0 0.847000 0 0 0 0 0.847000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g filter="url(#filter-1)" id="cloud--data-ops">
+            <g transform="translate(-0.001339, 0.000000)">
+                <rect id="Rectangle" fill="#000000" fill-rule="nonzero" x="28.0013391" y="18" width="2" height="10"></rect>
+                <rect id="Rectangle" fill="#000000" fill-rule="nonzero" x="24.0013391" y="14" width="2" height="14"></rect>
+                <rect id="Rectangle" fill="#000000" fill-rule="nonzero" x="20.0013391" y="22" width="2" height="6"></rect>
+                <path d="M22.1763391,9.99999297 L23.7613391,8.7339 C22.2876001,6.89143532 20.2072192,5.63246815 17.8913391,5.1816 C15.2849612,4.67810985 12.585337,5.23132234 10.3870731,6.71938945 C8.18880915,8.20745655 6.67221876,10.5083192 6.1713391,13.1152 C2.25729246,13.8225197 -0.425307571,17.4604527 0.055739103,21.4087 C0.60485423,25.2327199 3.90768023,28.054558 7.7705391,27.999993 L16.0013391,27.999993 L16.0013391,25.999993 L7.6958391,25.999993 C4.99412066,26.0422316 2.64311814,24.1597678 2.0935391,21.5142 C1.82406916,20.0729253 2.14055654,18.5836968 2.97285903,17.3765681 C3.80516152,16.1694395 5.08453631,15.3441118 6.5274391,15.0835 L7.8760391,14.8394 L8.0899391,13.7294 C8.70542634,10.3115045 11.4058291,7.65115161 14.8325391,7.0868 C15.8362179,6.93781608 16.8591179,6.98194024 17.8462391,7.2168 C19.5628431,7.62809985 21.0892926,8.6092352 22.1763391,9.99999297 L22.1763391,9.99999297 Z" id="Path" fill="#000000" fill-rule="nonzero"></path>
+                <rect id="_Transparent_Rectangle_" x="0.00133910302" y="0" width="32" height="32"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

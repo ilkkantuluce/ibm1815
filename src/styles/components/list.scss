@@ -1,0 +1,28 @@
+@import 'carbon-components/scss/components/list/_list.scss';
+
+.bx--list--unordered{
+  margin-left: 1.5rem;
+  line-height: 1.5;
+}
+.bx--list--ordered {
+    margin-left: 1.5rem;
+    line-height: 1.5;
+}
+.bx--list--unordered + p,
+.bx--list--ordered + p {
+    padding-top: 1.5rem;
+}
+.bx--list__item{
+    color: var(--text-01);
+}
+.bx--list--nested {
+  @media(min-width: 1056px){
+      width: calc(100% - 12.5% + 1rem);
+  }
+  @media(min-width: 1312px){
+      width: calc(100% -  18.75% + 1rem);
+  }
+  sup {
+      font-size: 0.75rem;
+  }
+}

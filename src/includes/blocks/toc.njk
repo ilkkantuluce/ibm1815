@@ -1,0 +1,235 @@
+<div id="js-transition-box" class="block--transition-box"></div>
+
+<div id="js-underlay" class="block--underlay">
+	<div class="block--toc {% if editorial.hero_mask == 'yes'%}mask{% endif %}">
+
+    {% if editorial.hero_background__video %}
+      <video id="toc-bg-video" playsinline autoplay muted loop aria-label="{{editorial.hero_alt}}">
+        <source src="images/{{editorial.hero_background__video}}" type="video/mp4">
+        Your browser doesn't support video
+      </video>
+
+    {% else %}
+      <img alt="{{editorial.hero_alt}}" srcset="images/{{editorial.hero_background | imageCut}}-1024w.jpg 1024w, images/{{editorial.hero_background | imageCut}}-1366w.jpg 1366w, images/{{editorial.hero_background | imageCut}}-2560w.jpg 2560w" src="images/{{editorial.hero_background | imageCut}}-1024w.jpg">
+
+    {% endif %}
+
+
+		<div class="bx--grid">
+			<div class="block--toc-contents bx--row">
+				<div class="block--toc-heading bx--col-xlg-4">
+					<h1  class="teaser-visible">{{editorial.title}}</h1>
+					{% include 'blocks/share-buttons.njk' %}
+          {% if editorial.hero_background__video %}
+            {% include 'blocks/bg-video-continuity.njk' %}
+          {% endif %}
+				</div>
+				<menu class="block--toc-items bx--col-xlg-12">
+					{% if (editorial.section_01_short_title) and (editorial.section_01_title) and (editorial.section_01_hover_text) and (editorial.section_01_reading_time) %}
+					<a id="pge--navigation-0__link-0" driverLocation="0" data-driverId="{{editorial.title | slug}}--{{editorial.section_01_short_title | slug}}" class="js-toc-item block--toc-item" data-toc-item="1" href="#{{editorial.section_01_short_title | slug}}" aria-label="{{editorial.section_01_short_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_01_title}}</h2>
+							<div class="block--toc-item-index">01</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_01_title}}</h2>
+							<p >{{editorial.section_01_hover_text}}</p>
+							<div class="block--toc-item-time">{{editorial.section_01_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_02_short_title) and (editorial.section_02_title) and (editorial.section_02_hover_text) and (editorial.section_02_reading_time) %}
+					<a id="pge--navigation-0__link-1" driverLocation="1" data-driverId="{{editorial.title | slug}}--{{editorial.section_02_short_title | slug}}" class="js-toc-item block--toc-item" data-toc-item="2" href="#{{editorial.section_02_short_title | slug}}" aria-label="{{editorial.section_02_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_02_title}}</h2>
+							<div class="block--toc-item-index">02</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_02_title}}</h2>
+							<p>{{editorial.section_02_hover_text}}</p>
+							<div class="block--toc-item-time">{{editorial.section_02_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_03_short_title) and (editorial.section_03_title) and (editorial.section_03_hover_text) and (editorial.section_03_reading_time) %}
+					<a id="pge--navigation-0__link-2" driverLocation="2" data-driverId="{{editorial.title | slug}}--{{editorial.section_03_short_title | slug}}" class="js-toc-item block--toc-item" data-toc-item="3" href="#{{editorial.section_03_short_title | slug}}" aria-label="{{editorial.section_03_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_03_title}}</h2>
+							<div class="block--toc-item-index">03</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_03_title}}</h2>
+							<p >{{editorial.section_03_hover_text}}</p>
+							<div  class="block--toc-item-time">{{editorial.section_03_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_04_short_title) and (editorial.section_04_title) and (editorial.section_04_hover_text) and (editorial.section_04_reading_time) %}
+					<a id="pge--navigation-0__link-3" driverLocation="3" data-driverId="{{editorial.title | slug}}--{{editorial.section_04_short_title | slug}}" class="js-toc-item block--toc-item" data-toc-item="4" href="#{{editorial.section_04_short_title | slug}}" aria-label="{{editorial.section_04_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_04_title}}</h2>
+							<div class="block--toc-item-index">04</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_04_title}}</h2>
+							<p >{{editorial.section_04_hover_text}}</p>
+							<div  class="block--toc-item-time">{{editorial.section_04_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_05_short_title) and (editorial.section_05_title) and (editorial.section_05_hover_text) and (editorial.section_05_reading_time) %}
+					<a id="pge--navigation-0__link-4" driverLocation="4" data-driverId="{{editorial.title | slug}}--{{editorial.section_05_short_title | slug }}" class="js-toc-item block--toc-item" data-toc-item="5" href="#{{editorial.section_05_short_title | slug}}" aria-label="{{editorial.section_05_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_05_title}}</h2>
+							<div class="block--toc-item-index">05</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_05_title}}</h2>
+							<p >{{editorial.section_05_hover_text}}</p>
+							<div  class="block--toc-item-time">{{editorial.section_05_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_06_short_title) and (editorial.section_06_title) and (editorial.section_06_hover_text) and (editorial.section_06_reading_time) %}
+					<a id="pge--navigation-0__link-5" driverLocation="5" data-driverId="{{editorial.title | slug}}--{{editorial.section_06_short_title | slug }}" class="js-toc-item block--toc-item" data-toc-item="6" href="#{{editorial.section_06_short_title | slug}}" aria-label="{{editorial.section_06_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_06_title}}</h2>
+							<div class="block--toc-item-index">06</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_06_title}}</h2>
+							<p >{{editorial.section_06_hover_text}}</p>
+							<div  class="block--toc-item-time">{{editorial.section_06_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_07_short_title) and (editorial.section_07_title) and (editorial.section_07_hover_text) and (editorial.section_07_reading_time) %}
+					<a id="pge--navigation-0__link-6" driverLocation="6" data-driverId="{{editorial.title | slug}}--{{editorial.section_07_short_title | slug }}" class="js-toc-item block--toc-item" data-toc-item="7" href="#{{editorial.section_07_short_title | slug}}" aria-label="{{editorial.section_07_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_07_title}}</h2>
+							<div class="block--toc-item-index">07</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_07_title}}</h2>
+							<p >{{editorial.section_07_hover_text}}</p>
+							<div  class="block--toc-item-time">{{editorial.section_07_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_08_short_title) and (editorial.section_08_title) and (editorial.section_08_hover_text) and (editorial.section_08_reading_time) %}
+					<a id="pge--navigation-0__link-7" driverLocation="7" data-driverId="{{editorial.title | slug}}--{{editorial.section_08_short_title | slug }}" class="js-toc-item block--toc-item" data-toc-item="8" href="#{{editorial.section_08_short_title | slug}}" aria-label="{{editorial.section_08_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_08_title}}</h2>
+							<div class="block--toc-item-index">08</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2>{{editorial.section_08_title}}</h2>
+							<p >{{editorial.section_08_hover_text}}</p>
+							<div class="block--toc-item-time">{{editorial.section_08_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_09_short_title) and (editorial.section_09_title) and (editorial.section_09_hover_text) and (editorial.section_09_reading_time) %}
+					<a id="pge--navigation-0__link-8" driverLocation="8" data-driverId="{{editorial.title | slug}}--{{editorial.section_09_short_title | slug }}" class="js-toc-item block--toc-item" data-toc-item="9" href="#{{editorial.section_09_short_title | slug}}" aria-label="{{editorial.section_09_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_09_title}}</h2>
+							<div class="block--toc-item-index">09</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_09_title}}</h2>
+							<p >{{editorial.section_09_hover_text}}</p>
+							<div  class="block--toc-item-time">{{editorial.section_09_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_10_short_title) and (editorial.section_10_title) and (editorial.section_10_hover_text) and (editorial.section_10_reading_time) %}
+					<a id="pge--navigation-0__link-8" driverLocation="8" data-driverId="{{editorial.title | slug}}--{{editorial.section_10_short_title | slug }}" class="js-toc-item block--toc-item" data-toc-item="9" href="#{{editorial.section_10_short_title | slug}}" aria-label="{{editorial.section_10_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_10_title}}</h2>
+							<div class="block--toc-item-index">10</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_10_title}}</h2>
+							<p >{{editorial.section_10_hover_text}}</p>
+							<div class="block--toc-item-time">{{editorial.section_10_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_11_short_title) and (editorial.section_11_title) and (editorial.section_11_hover_text) and (editorial.section_11_reading_time) %}
+					<a id="pge--navigation-0__link-8" driverLocation="8" data-driverId="{{editorial.title | slug}}--{{editorial.section_11_short_title | slug }}" class="js-toc-item block--toc-item" data-toc-item="9" href="#{{editorial.section_11_short_title | slug}}" aria-label="{{editorial.section_11_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_11_title}}</h2>
+							<div class="block--toc-item-index">11</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_11_title}}</h2>
+							<p >{{editorial.section_11_hover_text}}</p>
+							<div  class="block--toc-item-time">{{editorial.section_11_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+
+					{% if (editorial.section_12_short_title) and (editorial.section_12_title) and (editorial.section_12_hover_text) and (editorial.section_12_reading_time) %}
+					<a id="pge--navigation-0__link-8" driverLocation="8" data-driverId="{{editorial.title | slug}}--{{editorial.section_12_short_title | slug }}" class="js-toc-item block--toc-item" data-toc-item="9" href="#{{editorial.section_12_short_title | slug}}" aria-label="{{editorial.section_12_title}}" aria-role="menuitem">
+						<div class="block--toc-item-cover">
+							<h2 >{{editorial.section_12_title}}</h2>
+							<div class="block--toc-item-index">12</div>
+						</div>
+						<div class="block--toc-item-hover">
+							<h2 >{{editorial.section_12_title}}</h2>
+							<p >{{editorial.section_12_hover_text}}</p>
+							<div  class="block--toc-item-time">{{editorial.section_12_reading_time | readingTime}}</div>
+						</div>
+						<div class="arrow">
+							<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg>
+						</div>
+					</a>
+					{% endif %}
+				</menu>
+			</div>
+		</div>
+	</div>
+</div>

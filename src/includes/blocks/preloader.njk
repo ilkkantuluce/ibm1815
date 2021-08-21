@@ -1,0 +1,79 @@
+<style>
+@keyframes rotate {
+	0% {
+		transform: rotate(0)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
+}
+.block--preloader {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	opacity: 1;
+	transition: opacity 500ms ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+}
+.bx--loading {
+	-webkit-animation-name: rotate;
+	animation-name: rotate;
+	-webkit-animation-duration: 690ms;
+	animation-duration: 690ms;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+.bx--loading__svg {
+	fill: transparent;
+	-webkit-transition: fill 250ms;
+	transition: fill 250ms
+}
+.bx--loading__stroke {
+	stroke: #0f62fe;
+	stroke-dashoffset: 40
+}
+.bx--loading__svg circle {
+	stroke-width: 8;
+	stroke-linecap: butt;
+	stroke-dasharray: 240
+}
+.bx--loading svg circle {
+	-webkit-animation-name: init-stroke;
+	animation-name: init-stroke;
+	-webkit-animation-duration: 10ms;
+	animation-duration: 10ms;
+	-webkit-animation-timing-function: cubic-bezier(.2, 0, .38, .9);
+	animation-timing-function: cubic-bezier(.2, 0, .38, .9)
+}
+@keyframes preloaderOut {
+	0% {
+		z-index: 999;
+	}
+	100% {
+		z-index: -999;
+	}
+}
+body {
+	height: 100vh;
+	overflow-y: hidden;
+}
+</style>
+
+<div class="block--preloader" data-preloader>
+    <div data-loading class="bx--loading" style="width: 4rem; height: 4rem;">
+        <svg class="bx--loading__svg" viewBox="-75 -75 150 150">
+        <title>Loading</title>
+        <circle class="bx--loading__stroke" cx="0" cy="0" r="37.5" />
+        </svg>
+    </div>
+</div>

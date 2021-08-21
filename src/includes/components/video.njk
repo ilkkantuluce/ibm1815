@@ -1,0 +1,7 @@
+{% macro video (kaltura, hideCaption)%}
+	<div class="component component--video">
+	    <dds-video-player-container id="video--{{kaltura}}" video-id="{{kaltura}}" {% if hideCaption %}hide-caption="true"{% endif %}></dds-video-player-container>
+	</div>
+{% endmacro %}
+
+

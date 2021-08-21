@@ -1,0 +1,507 @@
+<div id="js-overlay" class="block--overlay">
+	<div id="js-sections-header" class="block--sections-header  {% if editorial.hero_mask == 'yes'%}mask{% endif %}">
+		{% if editorial.hero_background__video %}
+      <video playsinline autoplay muted loop>
+        <source src="images/{{editorial.hero_background__video}}" type="video/mp4">
+        Your browser doesn't support video
+      </video>
+
+    {% else %}
+      <img alt="{{editorial.hero_alt}}" srcset="images/{{editorial.hero_background | imageCut}}-1024w.jpg 1024w, images/{{editorial.hero_background | imageCut}}-1366w.jpg 1366w, images/{{editorial.hero_background | imageCut}}-2560w.jpg 2560w" src="images/{{editorial.hero_background | imageCut}}-1024w.jpg">
+
+    {% endif %}
+
+		<div class="bx--grid">
+			<div class="bx--row">
+				<div class="bx--col">
+					<div >{{editorial.title}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="js-sections" class="block--sections">
+		{% if (editorial.section_01_short_title) and (editorial.section_01_title) and (editorial.section_01_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_01_short_title | slug}}" data-name="{{editorial.section_01_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="1" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">01</p>
+							<p  class="block--section-time">{{editorial.section_01_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_01_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--01.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_02_short_title) and (editorial.section_02_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_02_short_title | slug}}" aria-label="{{editorial.section_02_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>02</span> {{editorial.section_02_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_02_short_title) and (editorial.section_02_title) and (editorial.section_02_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_02_short_title | slug}}" data-name="{{editorial.section_02_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="2" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">02</p>
+							<p  class="block--section-time">{{editorial.section_02_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_02_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--02.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_03_short_title) and (editorial.section_03_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_03_short_title | slug}}" aria-label="{{editorial.section_03_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>03</span> {{editorial.section_03_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_03_short_title) and (editorial.section_03_title) and (editorial.section_03_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_03_short_title | slug}}" data-name="{{editorial.section_03_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="3" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">03</p>
+							<p  class="block--section-time">{{editorial.section_03_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_03_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--03.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_04_short_title) and (editorial.section_04_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_04_short_title | slug}}" aria-label="{{editorial.section_04_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>04</span> {{editorial.section_04_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_04_short_title) and (editorial.section_04_title) and (editorial.section_04_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_04_short_title | slug}}" data-name="{{editorial.section_04_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="4" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">04</p>
+							<p  class="block--section-time">{{editorial.section_04_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_04_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--04.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_05_short_title) and (editorial.section_05_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_05_short_title | slug}}" aria-label="{{editorial.section_05_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>05</span> {{editorial.section_05_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_05_short_title) and (editorial.section_05_title) and (editorial.section_05_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_05_short_title | slug}}" data-name="{{editorial.section_05_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="5" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">05</p>
+							<p  class="block--section-time">{{editorial.section_05_reading_time | readingTime}}</p>
+
+							<header class="block--section-title">{{editorial.section_05_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--05.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_06_short_title) and (editorial.section_06_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_06_short_title | slug}}" aria-label="{{editorial.section_06_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>06</span> {{editorial.section_06_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_06_short_title) and (editorial.section_06_title) and (editorial.section_06_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_06_short_title | slug}}" data-name="{{editorial.section_06_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="6" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">06</p>
+							<p  class="block--section-time">{{editorial.section_06_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_06_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--06.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_07_short_title) and (editorial.section_07_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_07_short_title | slug}}" aria-label="{{editorial.section_07_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>07</span> {{editorial.section_07_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_07_short_title) and (editorial.section_07_title) and (editorial.section_07_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_07_short_title | slug}}" data-name="{{editorial.section_07_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="7" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">07</p>
+							<p  class="block--section-time">{{editorial.section_07_reading_time | readingTime}}</p>
+							<header  class="block--section-title">{{editorial.section_07_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--07.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_08_short_title) and (editorial.section_08_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_08_short_title | slug}}" aria-label="{{editorial.section_08_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>08</span> {{editorial.section_08_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_08_short_title) and (editorial.section_08_title) and (editorial.section_08_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_08_short_title | slug}}" data-name="{{editorial.section_08_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="8" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">08</p>
+							<p  class="block--section-time">{{editorial.section_08_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_08_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--08.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_09_short_title) and (editorial.section_09_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_09_short_title | slug}}" aria-label="{{editorial.section_09_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>09</span> {{editorial.section_09_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_09_short_title) and (editorial.section_09_title) and (editorial.section_09_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_09_short_title | slug}}" data-name="{{editorial.section_09_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="9" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">09</p>
+							<p  class="block--section-time">{{editorial.section_09_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_09_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--09.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_10_short_title) and (editorial.section_10_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_10_short_title | slug}}" aria-label="{{editorial.section_10_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>10</span> {{editorial.section_10_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_10_short_title) and (editorial.section_10_title) and (editorial.section_10_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_10_short_title | slug}}" data-name="{{editorial.section_10_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="9" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">10</p>
+							<p  class="block--section-time">{{editorial.section_10_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_10_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--10.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_11_short_title) and (editorial.section_11_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_11_short_title | slug}}" aria-label="{{editorial.section_11_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>11</span> {{editorial.section_11_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_11_short_title) and (editorial.section_11_title) and (editorial.section_11_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_11_short_title | slug}}" data-name="{{editorial.section_11_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="9" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">11</p>
+							<p  class="block--section-time">{{editorial.section_11_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_11_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--11.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+			{% if (editorial.section_12_short_title) and (editorial.section_12_title) %}
+			<nav class="block--section-next-container">
+				<a class="js-section-next js-section-next-trigger  block--section-next" href="#{{editorial.section_12_short_title | slug}}" aria-label="{{editorial.section_12_title}}">
+			  		<div class="arrow"><svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M18 6L16.6 7.4 24.1 15 3 15 3 17 24.1 17 16.6 24.6 18 26 28 16z"></path><title>Arrow right</title></svg></div>
+			  		<div class=""><span>12</span> {{editorial.section_12_title}}</div>
+				</a>
+			</nav>
+			{% endif %}
+		</section>
+		{% endif %}
+
+		{% if (editorial.section_12_short_title) and (editorial.section_12_title) and (editorial.section_12_reading_time) %}
+		<section class="js-section block--section" data-section="{{editorial.section_12_short_title | slug}}" data-name="{{editorial.section_12_title}}">
+			<div class="block--section-close js-section-close-container">
+				<div class="bx--grid">
+					<div class="bx--row">
+						<div class="bx--col">
+							<a class="js-section-close close" data-toc-id="9" href="#">
+								<svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path d="M13 26L14.41 24.59 6.83 17 29 17 29 15 6.83 15 14.41 7.41 13 6 3 16 13 26z"></path><title>Arrow left</title></svg>Back to table of contents
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bx--grid">
+				<div class="bx--row">
+					<div class="bx--col">
+						<header class="block--section-header">
+							<p class="block--section-index">12</p>
+							<p  class="block--section-time">{{editorial.section_12_reading_time | readingTime}}</p>
+
+							<header  class="block--section-title">{{editorial.section_12_title}}</header>
+						</header>
+
+						<article class="block--section-copy">
+							{% include 'editorial/section--12.njk' %}
+						</article>
+					</div>
+				</div>
+			</div>
+			{% include 'blocks/share-buttons.njk' %}
+		</section>
+		{% endif %}
+	</div>
+</div>

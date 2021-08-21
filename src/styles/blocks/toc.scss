@@ -1,0 +1,335 @@
+$tocBorderColor: #fff;
+$tocFontHover: #161616;
+$tocBackgroundHover: #fff;
+
+
+.block--underlay {
+  &.hidden {
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.block--overlay {
+  background: var(--ui-background);
+  display: none;
+  height: auto;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.block--overlay .block--sections .block--section.selected,
+.block--overlay.display {
+  display: block;
+}
+
+.block--transition-box {
+  background: var(--ui-background);
+  height: 25vw;
+  opacity: 0;
+  position: absolute;
+  width: 25vw;
+  z-index: -10;
+  &.animate {
+    z-index: 10;
+  }
+  @media (max-width: 1312px) {
+    height: 50vw;
+    width: 50vw;
+  }
+}
+
+.block--toc {
+  padding-top: 3rem;
+  position: relative;
+  width: 100%;
+  color: #f4f4f4;
+  padding-bottom: 2rem;
+  overflow: hidden;
+  z-index:1;
+
+  video,
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  &.mask {
+    &:before {
+      z-index: 2;
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.5;
+    }
+    
+  }
+
+  .block--toc-contents {
+    position: relative;
+    z-index: 3;
+  }
+
+  .block--toc-heading {
+    padding: 1rem;
+    position: relative;
+
+    .block--share {
+      padding-top: 3rem;
+      position: relative;
+
+      a {
+        margin-left: 0;
+        margin-right: 0.5rem;
+      }
+    }
+
+    .block--toc-play-pause-wrapper {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+
+      @media (min-width: 1312px) {
+        left: 1rem;
+        right: auto;
+      }
+
+      .block--toc-play-pause {
+        cursor: pointer;
+        width: 2.25rem;
+        height: 2.25rem;
+        padding: 0.25rem;
+        background: transparent;
+        outline: 0;
+        border: 0;
+        color: #fff;
+
+        &:focus {
+          outline: 2px solid #0f62fe;
+          outline-offset: -2px;
+        }
+
+        svg {
+          display: block;
+          width: 100%;
+        }
+
+        .play {
+          display: none;
+        }
+
+        &.video-paused {
+          .play {
+            display: block;
+          }
+
+          .pause {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  h1 {
+    padding: 0;
+    font-weight: 300;
+    line-height: 1.125;
+    margin: 0;
+    overflow-wrap: break-word;
+    max-width: 672px;
+    @media (min-width: 1312px) {
+      max-width: 100%;
+    }
+  }
+
+  h2 {
+    line-height: 1.25;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    overflow-wrap: break-word;
+    @media (min-width: 672px) {
+      -webkit-line-clamp: 4;
+      min-height: 8rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .block--toc-items {
+    // padding: 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (min-width: 1312px) {
+      padding: 0;
+    }
+  }
+
+  .block--toc-item {
+    display: block;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid $tocBorderColor;
+    border-left: 1px solid $tocBorderColor;
+    border-right: 1px solid $tocBorderColor;
+    color: $tocBorderColor;
+
+    &:nth-child(1) {
+      border-top: 1px solid $tocBorderColor;
+    }
+
+    @media (min-width: 600px) {
+      width: 50%;
+      &:nth-child(2) {
+        border-top: 1px solid $tocBorderColor;
+      }
+      &:nth-child(even) {
+        border-left: none;
+      }
+    }
+
+    @media (min-width: 768px) {
+      width: 33.333333333333333333%;
+      &:nth-child(3) {
+        border-top: 1px solid $tocBorderColor;
+      }
+      &:nth-child(odd) {
+        border-left: none;
+      }
+      &:nth-child(even) {
+        border-right: none;
+      }
+
+      &:first-child,
+      &:nth-child(4),
+      &:nth-child(7),
+      &:nth-child(10) {
+        border-left: 1px solid $tocBorderColor;
+      }
+
+      &:first-child,
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(10),
+      &:nth-child(11),
+      &:nth-child(12) {
+        border-right: 1px solid $tocBorderColor;
+      }
+    }
+
+    @media (min-width: 1312px) {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        border-top: 0;
+      }
+    }
+
+    .block--toc-item-cover,
+    .block--toc-item-hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+    }
+
+    .block--toc-item-cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .block--toc-item-hover {
+      opacity: 0;
+      transition: transform 300ms ease-out;
+      z-index: 1;
+      background-color: $tocBackgroundHover;
+      color: $tocFontHover;
+
+      p {
+        display: none;
+        @media (min-width: 1056px) {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          padding-right: 2rem;
+        }
+      }
+    }
+
+    .block--toc-item-index {
+      line-height: 1;
+      font-size: calc(1rem + 6 * ((100vw - 320px) / 672));
+    }
+
+    .block--toc-item-time {
+      line-height: 1;
+      font-size: 0.875rem;
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+
+      @media (min-width: 672px) {
+        font-size: 1rem;
+      }
+    }
+
+    .arrow {
+      width: 20px;
+      z-index: 2;
+      position: absolute;
+      bottom: 0.5rem;
+      right: 1rem;
+      @media (min-width: 1056px) {
+        width: 30px;
+      }
+      transition: transform 300ms ease-out;
+      svg {
+        display: block;
+        width: 100%;
+        fill: #fff;
+      }
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%;
+    }
+
+    &:hover {
+      .block--toc-item-hover {
+        opacity: 1;
+      }
+      .arrow {
+        svg {
+          fill: #0f62fe;
+        }
+        transform: translateX(-1rem);
+      }
+    }
+  }
+}

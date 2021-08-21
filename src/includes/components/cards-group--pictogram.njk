@@ -1,0 +1,347 @@
+{% macro cardsGroupPictogram (
+    card1imageFile, card1imageALT, card1eyebrow, card1heading, card1URL, card1IconType, card2imageFile, card2imageALT, card2eyebrow, card2heading, card2URL, card2IconType,  card3imageFile, card3imageALT, card3eyebrow, card3heading, card3URL, card3IconType, card4imageFile, card4imageALT, card4eyebrow, card4heading, card4URL, card4IconType, card5imageFile, card5imageALT, card5eyebrow, card5heading, card5URL, card5IconType, ctaHeading, ctaURL, ctaIconType) %}
+    <div class="component component--cards-group--pictogram reveal">
+        {% if (card1imageFile) and (card1imageALT) and (card1heading) %}
+            {% if card1URL %}
+            <a target="_blank" rel="noopener noreferrer" href="{{card1URL}}" class="bx--tile bx--tile--clickable bx--card">
+            {% else %}
+            <div class="bx--card">
+            {% endif %} 
+                <div class="bx--card__wrapper">
+                    {% if (card1imageFile) and (card1imageALT) %}
+                    <figure>   
+                        {% if card1imageFile | isSVG %}
+                            <img alt="{{card1imageALT}}" class="" src="images/{{card1imageFile}}" >
+                        {% elseif card1imageFile | isGIF %}
+                            <img class="lazy" alt="{{card1imageALT}}" data-srcset="images/{{ card1imageFile | imageCut }}-375w.gif 375w, images/{{ card1imageFile | imageCut }}-768w.gif 768w">
+                        {% elseif card1imageFile | isPNG %}
+                            <img class="lazy" alt="{{card1imageALT}}" data-srcset="images/{{ card1imageFile | imageCut }}-375w.png 375w, images/{{ card1imageFile | imageCut }}-768w.png 768w">
+                        {% elseif card1imageFile | isJPG %}
+                            <img class="lazy" alt="{{card1imageALT}}" data-srcset="images/{{ card1imageFile | imageCut }}-375w.jpg 375w, images/{{ card1imageFile | imageCut }}-768w.jpg 768w">
+                        {% endif %}
+                    </figure>
+                    {% endif %}
+                    {% if card1eyebrow %}
+                        <div class="bx--card__eyebrow">{{card1eyebrow}}</div>
+                    {% endif %}
+                    <div class="bx--card__heading">{{card1heading}}</div>
+                    {% if card1copy %}
+                        <div class="bx--card__copy">
+                            <p>{{card1copy}}</p>
+                        </div>
+                    {% endif %}
+                    {% if card1URL %}
+                    <div class="bx--card__footer">
+                        {% if card1IconType == 'blog' %}
+                        <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>blog</title><rect x="4" y="24" width="10" height="2"/><rect x="4" y="18" width="10" height="2"/><path d="M26,14H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2v6A2,2,0,0,1,26,14ZM6,6v6H26V6Z" transform="translate(0 0)"/><path d="M26,28H20a2,2,0,0,1-2-2V20a2,2,0,0,1,2-2h6a2,2,0,0,1,2,2v6A2,2,0,0,1,26,28Zm-6-8v6h6V20Z" transform="translate(0 0)"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card1IconType == 'download' %}
+                            <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon"  viewBox="0 0 32 32"><defs> <style>.cls-1 {fill: none; }</style></defs> <path d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"/><polygon points="26 14 24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14"/> <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;"><rect class="cls-1" width="32" height="32"/></g>
+                            </svg>
+
+                        {% elif card1IconType == 'pdf' %}
+                            <svg focusable="false"  aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>PDF</title><polygon points="30 11 30 9 22 9 22 23 24 23 24 17 29 17 29 15 24 15 24 11 30 11"/><path d="M8,9H2V23H4V18H8a2,2,0,0,0,2-2V11A2,2,0,0,0,8,9Zm0,7H4V11H8Z"/><path d="M16,23H12V9h4a4,4,0,0,1,4,4v6A4,4,0,0,1,16,23Zm-2-2h2a2,2,0,0,0,2-2V13a2,2,0,0,0-2-2H14Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                    
+
+                        {% elif card1IconType == 'video' %}
+                            <svg  focusable="false" aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>video</title><path d="M21,26H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H21a2,2,0,0,1,2,2v4.06l5.42-3.87A1,1,0,0,1,30,9V23a1,1,0,0,1-1.58.81L23,19.94V24A2,2,0,0,1,21,26ZM4,8V24H21V18a1,1,0,0,1,1.58-.81L28,21.06V10.94l-5.42,3.87A1,1,0,0,1,21,14V8Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card1IconType == 'external' %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z"></path><path d="M20 2L20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2z"></path></svg>
+                    
+                        {% else %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path></svg>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            {% if card1URL %}
+            </a>
+            {% else %}
+            </div>
+            {% endif %}
+        {% endif %}
+
+        {% if (card2imageFile) and (card2imageALT) and (card2heading) %}
+            {% if card2URL %}
+            <a target="_blank" rel="noopener noreferrer" href="{{card2URL}}" class="bx--tile bx--tile--clickable bx--card">
+            {% else %}
+            <div class="bx--card">
+            {% endif %}
+                <div class="bx--card__wrapper">
+                    {% if (card2imageFile) and (card2imageALT) %}
+                    <figure>   
+                    {% if card2imageFile | isSVG %}
+                        <img alt="{{card2imageALT}}" class="" src="images/{{card2imageFile}}" >
+                    {% elseif card2imageFile | isGIF %}
+                        <img class="lazy" alt="{{card2imageALT}}" data-srcset="images/{{ card2imageFile | imageCut }}-375w.gif 375w, images/{{ card2imageFile | imageCut }}-768w.gif 768w">
+                    {% elseif card2imageFile | isPNG %}
+                        <img class="lazy" alt="{{card2imageALT}}" data-srcset="images/{{ card2imageFile | imageCut }}-375w.png 375w, images/{{ card2imageFile | imageCut }}-768w.png 768w">
+                    {% elseif card2imageFile | isJPG %}
+                        <img class="lazy" alt="{{card2imageALT}}" data-srcset="images/{{ card2imageFile | imageCut }}-375w.jpg 375w, images/{{ card2imageFile | imageCut }}-768w.jpg 768w">
+                    {% endif %}
+                    </figure>
+                    {% endif %}
+                    {% if card2eyebrow %}
+                        <div class="bx--card__eyebrow">{{card2eyebrow}}</div>
+                    {% endif %}
+                    <div class="bx--card__heading">{{card2heading}}</div>
+                    {% if card2copy %}
+                        <div class="bx--card__copy">
+                            <p>{{card2copy}}</p>
+                        </div>
+                    {% endif %}
+                    {% if card2URL %}
+                    <div class="bx--card__footer">
+                        {% if card2IconType == 'blog' %}
+                        <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>blog</title><rect x="4" y="24" width="10" height="2"/><rect x="4" y="18" width="10" height="2"/><path d="M26,14H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2v6A2,2,0,0,1,26,14ZM6,6v6H26V6Z" transform="translate(0 0)"/><path d="M26,28H20a2,2,0,0,1-2-2V20a2,2,0,0,1,2-2h6a2,2,0,0,1,2,2v6A2,2,0,0,1,26,28Zm-6-8v6h6V20Z" transform="translate(0 0)"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card2IconType == 'download' %}
+                            <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon"  viewBox="0 0 32 32"><defs> <style>.cls-1 {fill: none; }</style></defs> <path d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"/><polygon points="26 14 24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14"/> <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;"><rect class="cls-1" width="32" height="32"/></g>
+                            </svg>
+
+                        {% elif card2IconType == 'pdf' %}
+                            <svg focusable="false"  aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>PDF</title><polygon points="30 11 30 9 22 9 22 23 24 23 24 17 29 17 29 15 24 15 24 11 30 11"/><path d="M8,9H2V23H4V18H8a2,2,0,0,0,2-2V11A2,2,0,0,0,8,9Zm0,7H4V11H8Z"/><path d="M16,23H12V9h4a4,4,0,0,1,4,4v6A4,4,0,0,1,16,23Zm-2-2h2a2,2,0,0,0,2-2V13a2,2,0,0,0-2-2H14Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                    
+
+                        {% elif card2IconType == 'video' %}
+                            <svg  focusable="false" aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>video</title><path d="M21,26H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H21a2,2,0,0,1,2,2v4.06l5.42-3.87A1,1,0,0,1,30,9V23a1,1,0,0,1-1.58.81L23,19.94V24A2,2,0,0,1,21,26ZM4,8V24H21V18a1,1,0,0,1,1.58-.81L28,21.06V10.94l-5.42,3.87A1,1,0,0,1,21,14V8Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card2IconType == 'external' %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z"></path><path d="M20 2L20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2z"></path></svg>
+                    
+                        {% else %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path></svg>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            {% if card2URL %}
+            </a>
+            {% else %}
+            </div>
+            {% endif %}
+        {% endif %}
+
+        {% if (card3imageFile) and (card3imageALT) and (card3heading) %}
+            {% if card3URL %}
+            <a target="_blank" rel="noopener noreferrer" href="{{card3URL}}" class="bx--tile bx--tile--clickable bx--card">
+            {% else %}
+            <div class="bx--card">
+            {% endif %}
+                <div class="bx--card__wrapper">
+                    {% if (card1imageFile) and (card1imageALT) %}
+                    <figure>   
+                    {% if card3imageFile | isSVG %}
+                        <img alt="{{card3imageALT}}" class="" src="images/{{card3imageFile}}" >
+                    {% elseif card3imageFile | isGIF %}
+                        <img class="lazy" alt="{{card3imageALT}}" data-srcset="images/{{ card3imageFile | imageCut }}-375w.gif 375w, images/{{ card3imageFile | imageCut }}-768w.gif 768w">
+                    {% elseif card3imageFile | isPNG %}
+                        <img class="lazy" alt="{{card3imageALT}}" data-srcset="images/{{ card3imageFile | imageCut }}-375w.png 375w, images/{{ card3imageFile | imageCut }}-768w.png 768w">
+                    {% elseif card3imageFile | isJPG %}
+                        <img class="lazy" alt="{{card3imageALT}}" data-srcset="images/{{ card3imageFile | imageCut }}-375w.jpg 375w, images/{{ card3imageFile | imageCut }}-768w.jpg 768w">
+                    {% endif %}
+                    </figure>
+                    {% endif %}
+                    {% if card3eyebrow %}
+                        <div class="bx--card__eyebrow">{{card3eyebrow}}</div>
+                    {% endif %}
+                    <div class="bx--card__heading">{{card3heading}}</div>
+                    {% if card3copy %}
+                        <div class="bx--card__copy">
+                            <p>{{card3copy}}</p>
+                        </div>
+                    {% endif %}
+                    {% if card3URL %}
+                    <div class="bx--card__footer">
+                        {% if card3IconType == 'blog' %}
+                        <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>blog</title><rect x="4" y="24" width="10" height="2"/><rect x="4" y="18" width="10" height="2"/><path d="M26,14H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2v6A2,2,0,0,1,26,14ZM6,6v6H26V6Z" transform="translate(0 0)"/><path d="M26,28H20a2,2,0,0,1-2-2V20a2,2,0,0,1,2-2h6a2,2,0,0,1,2,2v6A2,2,0,0,1,26,28Zm-6-8v6h6V20Z" transform="translate(0 0)"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card3IconType == 'download' %}
+                            <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon"  viewBox="0 0 32 32"><defs> <style>.cls-1 {fill: none; }</style></defs> <path d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"/><polygon points="26 14 24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14"/> <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;"><rect class="cls-1" width="32" height="32"/></g>
+                            </svg>
+
+                        {% elif card3IconType == 'pdf' %}
+                            <svg focusable="false"  aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>PDF</title><polygon points="30 11 30 9 22 9 22 23 24 23 24 17 29 17 29 15 24 15 24 11 30 11"/><path d="M8,9H2V23H4V18H8a2,2,0,0,0,2-2V11A2,2,0,0,0,8,9Zm0,7H4V11H8Z"/><path d="M16,23H12V9h4a4,4,0,0,1,4,4v6A4,4,0,0,1,16,23Zm-2-2h2a2,2,0,0,0,2-2V13a2,2,0,0,0-2-2H14Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                    
+
+                        {% elif card3IconType == 'video' %}
+                            <svg  focusable="false" aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>video</title><path d="M21,26H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H21a2,2,0,0,1,2,2v4.06l5.42-3.87A1,1,0,0,1,30,9V23a1,1,0,0,1-1.58.81L23,19.94V24A2,2,0,0,1,21,26ZM4,8V24H21V18a1,1,0,0,1,1.58-.81L28,21.06V10.94l-5.42,3.87A1,1,0,0,1,21,14V8Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card3IconType == 'external' %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z"></path><path d="M20 2L20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2z"></path></svg>
+                    
+                        {% else %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path></svg>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            {% if card3URL %}
+            </a>
+            {% else %}
+            </div>
+            {% endif %}
+        {% endif %}
+
+        {% if (card4imageFile) and (card4imageALT) and (card4heading) %}
+            {% if card4URL %}
+            <a target="_blank" rel="noopener noreferrer" href="{{card4URL}}" class="bx--tile bx--tile--clickable bx--card">
+            {% else %}
+            <div class="bx--card">
+            {% endif %}
+                <div class="bx--card__wrapper">
+                    {% if (card4imageFile) and (card4imageALT) %}
+                    <figure>   
+                    {% if card1imageFile | isSVG %}
+                        <img alt="{{card4imageALT}}" class="" src="images/{{card4imageFile}}" >
+                    {% elseif card4imageFile | isGIF %}
+                        <img class="lazy" alt="{{card4imageALT}}" data-srcset="images/{{ card4imageFile | imageCut }}-375w.gif 375w, images/{{ card4imageFile | imageCut }}-768w.gif 768w">
+                    {% elseif card4imageFile | isPNG %}
+                        <img class="lazy" alt="{{card4imageALT}}" data-srcset="images/{{ card4imageFile | imageCut }}-375w.png 375w, images/{{ card4imageFile | imageCut }}-768w.png 768w">
+                    {% elseif card4imageFile | isJPG %}
+                        <img class="lazy" alt="{{card4imageALT}}" data-srcset="images/{{ card4imageFile | imageCut }}-375w.jpg 375w, images/{{ card4imageFile | imageCut }}-768w.jpg 768w">
+                    {% endif %}
+                    </figure>
+                    {% endif %}
+                    {% if card4eyebrow %}
+                        <div class="bx--card__eyebrow">{{card4eyebrow}}</div>
+                    {% endif %}
+                    <div class="bx--card__heading">{{card4heading}}</div>
+                    {% if card4copy %}
+                        <div class="bx--card__copy">
+                            <p>{{card4copy}}</p>
+                        </div>
+                    {% endif %}
+                    {% if card4URL %}
+                    <div class="bx--card__footer">
+                       {% if card4IconType == 'blog' %}
+                        <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>blog</title><rect x="4" y="24" width="10" height="2"/><rect x="4" y="18" width="10" height="2"/><path d="M26,14H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2v6A2,2,0,0,1,26,14ZM6,6v6H26V6Z" transform="translate(0 0)"/><path d="M26,28H20a2,2,0,0,1-2-2V20a2,2,0,0,1,2-2h6a2,2,0,0,1,2,2v6A2,2,0,0,1,26,28Zm-6-8v6h6V20Z" transform="translate(0 0)"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card4IconType == 'download' %}
+                            <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon"  viewBox="0 0 32 32"><defs> <style>.cls-1 {fill: none; }</style></defs> <path d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"/><polygon points="26 14 24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14"/> <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;"><rect class="cls-1" width="32" height="32"/></g>
+                            </svg>
+
+                        {% elif card4IconType == 'pdf' %}
+                            <svg focusable="false"  aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>PDF</title><polygon points="30 11 30 9 22 9 22 23 24 23 24 17 29 17 29 15 24 15 24 11 30 11"/><path d="M8,9H2V23H4V18H8a2,2,0,0,0,2-2V11A2,2,0,0,0,8,9Zm0,7H4V11H8Z"/><path d="M16,23H12V9h4a4,4,0,0,1,4,4v6A4,4,0,0,1,16,23Zm-2-2h2a2,2,0,0,0,2-2V13a2,2,0,0,0-2-2H14Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                    
+
+                        {% elif card4IconType == 'video' %}
+                            <svg  focusable="false" aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>video</title><path d="M21,26H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H21a2,2,0,0,1,2,2v4.06l5.42-3.87A1,1,0,0,1,30,9V23a1,1,0,0,1-1.58.81L23,19.94V24A2,2,0,0,1,21,26ZM4,8V24H21V18a1,1,0,0,1,1.58-.81L28,21.06V10.94l-5.42,3.87A1,1,0,0,1,21,14V8Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card4IconType == 'external' %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z"></path><path d="M20 2L20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2z"></path></svg>
+                    
+                        {% else %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path></svg>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            {% if card4URL %}
+            </a>
+            {% else %}
+            </div>
+            {% endif %}
+        {% endif %}
+
+        {% if (card5imageFile) and (card5imageALT) and (card5heading) %}
+            {% if card5URL %}
+            <a target="_blank" rel="noopener noreferrer" href="{{card5URL}}" class="bx--tile bx--tile--clickable bx--card">
+            {% else %}
+            <div class="bx--card">
+            {% endif %}
+                <div class="bx--card__wrapper">
+                    {% if (card5imageFile) and (card5imageALT) %}
+                    <figure>   
+                    {% if card5imageFile | isSVG %}
+                        <img alt="{{card5imageALT}}" class="" src="images/{{card5imageFile}}" >
+                    {% elseif card5imageFile | isGIF %}
+                        <img class="lazy" alt="{{card5imageALT}}" data-srcset="images/{{ card5imageFile | imageCut }}-375w.gif 375w, images/{{ card5imageFile | imageCut }}-768w.gif 768w">
+                    {% elseif card5imageFile | isPNG %}
+                        <img class="lazy" alt="{{card5imageALT}}" data-srcset="images/{{ card5imageFile | imageCut }}-375w.png 375w, images/{{ card5imageFile | imageCut }}-768w.png 768w">
+                    {% elseif card5imageFile | isJPG %}
+                        <img class="lazy" alt="{{card5imageALT}}" data-srcset="images/{{ card5imageFile | imageCut }}-375w.jpg 375w, images/{{ card5imageFile | imageCut }}-768w.jpg 768w">
+                    {% endif %}
+                    </figure>
+                    {% endif %}
+                    {% if card5eyebrow %}
+                        <div class="bx--card__eyebrow">{{card5eyebrow}}</div>
+                    {% endif %}
+                    <div class="bx--card__heading">{{card5heading}}</div>
+                    {% if card5copy %}
+                        <div class="bx--card__copy">
+                            <p>{{card5copy}}</p>
+                        </div>
+                    {% endif %}
+                    {% if card5URL %}
+                    <div class="bx--card__footer">
+                        {% if card5IconType == 'blog' %}
+                            <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>blog</title><rect x="4" y="24" width="10" height="2"/><rect x="4" y="18" width="10" height="2"/><path d="M26,14H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2v6A2,2,0,0,1,26,14ZM6,6v6H26V6Z" transform="translate(0 0)"/><path d="M26,28H20a2,2,0,0,1-2-2V20a2,2,0,0,1,2-2h6a2,2,0,0,1,2,2v6A2,2,0,0,1,26,28Zm-6-8v6h6V20Z" transform="translate(0 0)"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card5IconType == 'download' %}
+                            <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon"  viewBox="0 0 32 32"><defs> <style>.cls-1 {fill: none; }</style></defs> <path d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"/><polygon points="26 14 24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14"/> <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;"><rect class="cls-1" width="32" height="32"/></g>
+                            </svg>
+
+                        {% elif card5IconType == 'pdf' %}
+                            <svg focusable="false"  aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>PDF</title><polygon points="30 11 30 9 22 9 22 23 24 23 24 17 29 17 29 15 24 15 24 11 30 11"/><path d="M8,9H2V23H4V18H8a2,2,0,0,0,2-2V11A2,2,0,0,0,8,9Zm0,7H4V11H8Z"/><path d="M16,23H12V9h4a4,4,0,0,1,4,4v6A4,4,0,0,1,16,23Zm-2-2h2a2,2,0,0,0,2-2V13a2,2,0,0,0-2-2H14Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                    
+
+                        {% elif card5IconType == 'video' %}
+                            <svg  focusable="false" aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>video</title><path d="M21,26H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H21a2,2,0,0,1,2,2v4.06l5.42-3.87A1,1,0,0,1,30,9V23a1,1,0,0,1-1.58.81L23,19.94V24A2,2,0,0,1,21,26ZM4,8V24H21V18a1,1,0,0,1,1.58-.81L28,21.06V10.94l-5.42,3.87A1,1,0,0,1,21,14V8Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                        {% elif card5IconType == 'external' %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z"></path><path d="M20 2L20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2z"></path></svg>
+                    
+                        {% else %}
+                            <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path></svg>
+                        {% endif %}
+                    </div>
+                    {% endif %}
+                </div>
+            {% if card5URL %}
+            </a>
+            {% else %}
+            </div>
+            {% endif %}
+        {% endif %}
+
+
+        {% if (ctaHeading) and (ctaURL)%}
+            <a target="_blank" rel="noopener noreferrer" href="{{ctaURL}}" class="bx--tile bx--tile--clickable bx--card bx--card bx--card--inverse bx--card--cta">
+                <div class="bx--card__wrapper">
+                    <div class="bx--card__heading">{{ctaHeading}}</div>
+                    <div class="bx--card__footer">
+                    {% if ctaIconType == 'blog' %}
+                        <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor"  xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>blog</title><rect x="4" y="24" width="10" height="2"/><rect x="4" y="18" width="10" height="2"/><path d="M26,14H6a2,2,0,0,1-2-2V6A2,2,0,0,1,6,4H26a2,2,0,0,1,2,2v6A2,2,0,0,1,26,14ZM6,6v6H26V6Z" transform="translate(0 0)"/><path d="M26,28H20a2,2,0,0,1-2-2V20a2,2,0,0,1,2-2h6a2,2,0,0,1,2,2v6A2,2,0,0,1,26,28Zm-6-8v6h6V20Z" transform="translate(0 0)"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                    {% elif ctaIconType == 'download' %}
+                        <svg focusable="false" aria-hidden="true" width="20" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon"  viewBox="0 0 32 32"><defs> <style>.cls-1 {fill: none; }</style></defs> <path d="M26,24v4H6V24H4v4H4a2,2,0,0,0,2,2H26a2,2,0,0,0,2-2h0V24Z"/><polygon points="26 14 24.59 12.59 17 20.17 17 2 15 2 15 20.17 7.41 12.59 6 14 16 24 26 14"/> <g id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;"><rect class="cls-1" width="32" height="32"/></g>
+                        </svg>
+
+                    {% elif ctaIconType == 'pdf' %}
+                        <svg focusable="false"  aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>PDF</title><polygon points="30 11 30 9 22 9 22 23 24 23 24 17 29 17 29 15 24 15 24 11 30 11"/><path d="M8,9H2V23H4V18H8a2,2,0,0,0,2-2V11A2,2,0,0,0,8,9Zm0,7H4V11H8Z"/><path d="M16,23H12V9h4a4,4,0,0,1,4,4v6A4,4,0,0,1,16,23Zm-2-2h2a2,2,0,0,0,2-2V13a2,2,0,0,0-2-2H14Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                
+
+                    {% elif ctaIconType == 'video' %}
+                        <svg  focusable="false" aria-hidden="true" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="icon" viewBox="0 0 32 32"><defs><style>.cls-1{fill:none;}</style></defs><title>video</title><path d="M21,26H4a2,2,0,0,1-2-2V8A2,2,0,0,1,4,6H21a2,2,0,0,1,2,2v4.06l5.42-3.87A1,1,0,0,1,30,9V23a1,1,0,0,1-1.58.81L23,19.94V24A2,2,0,0,1,21,26ZM4,8V24H21V18a1,1,0,0,1,1.58-.81L28,21.06V10.94l-5.42,3.87A1,1,0,0,1,21,14V8Z"/><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/></svg>
+
+                    {% elif ctaIconType == 'external' %}
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true"><path d="M26,28H6a2.0027,2.0027,0,0,1-2-2V6A2.0027,2.0027,0,0,1,6,4H16V6H6V26H26V16h2V26A2.0027,2.0027,0,0,1,26,28Z"></path><path d="M20 2L20 4 26.586 4 18 12.586 19.414 14 28 5.414 28 12 30 12 30 2 20 2z"></path></svg>
+                
+                    {% else %}
+                        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M11.8 2.8L10.8 3.8 16.2 9.3 1 9.3 1 10.7 16.2 10.7 10.8 16.2 11.8 17.2 19 10z"></path></svg>
+                    {% endif %}
+                    </div>
+                </div>
+            </a>
+        {% endif %}
+
+    </div>
+{% endmacro %}

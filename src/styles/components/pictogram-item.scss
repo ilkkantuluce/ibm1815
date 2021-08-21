@@ -1,0 +1,44 @@
+.component--pictogram-item {
+  .bx--pictogram-item {
+      max-width: 568px;
+
+      figure {
+          margin-bottom: 1rem;
+          width: 6rem;
+          flex-shrink: 0;
+      }
+
+      .bx--content-item__heading {
+          font-weight: 600;
+          line-height: 1.5;
+      }
+
+      .bx--content-item__copy {
+          line-height: 1.5;
+          font-size: 1rem;
+      }
+
+      .bx--link {
+          margin-top: 1rem;
+          font-size: 1rem;
+      }
+      .bx--link-with-icon svg{
+          margin-left: 0.5rem;
+      }
+      .bx--link-with-icon span{
+        align-self: center;
+      }
+      @media (min-width: 672px){
+          display: flex;
+
+          figure {
+              margin-bottom: 0;
+              margin-right: 2rem;
+          }
+      }
+  }
+}
+
+.component--pictogram-item + .component--pictogram-item {
+  padding-top: 0;
+}

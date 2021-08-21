@@ -1,0 +1,25 @@
+---
+layout: base
+---
+
+{% from 'components/accordion.njk' import accordion %}
+{% from 'components/citation.njk' import citation %}
+{% from 'components/image.njk' import image %}
+{% from 'components/structured-list.njk' import structuredList %}
+{% from 'components/pictogram-item.njk' import pictogramItem %}
+{% from 'components/callout-quote.njk' import calloutQuote %}
+{% from 'components/feature-card.njk' import featureCard %}
+{% from 'components/cards-group--default.njk' import cardsGroupDefault %}
+{% from 'components/cards-group--image.njk' import cardsGroupImage %}
+{% from 'components/cards-group--pictogram.njk' import cardsGroupPictogram %}
+{% from 'components/video.njk' import video %}
+{% from 'components/standalone-link.njk' import standaloneLink %}
+{% from 'components/chart-container.njk' import chartContainer %}
+
+<!-- shell -->
+<div data-autoid="dds--dotcom-shell">
+  <div data-autoid="dds--dotcom-shell__content" id="main-content">
+    {% include 'blocks/toc.njk' %}
+    {% include 'blocks/sections.njk' %}
+  </div>
+</div>

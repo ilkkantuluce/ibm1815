@@ -1,0 +1,42 @@
+# Build results
+dist/
+_site
+
+# Visual Studio
+.vscode/
+
+# Package managers
+node_modules/
+.npm
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Locks
+yarn.lock
+package-lock.json
+
+# DS_Store
+.DS_Store
+src/.DS_Store
+docs/.DS_Store
+
+# docs folder
+docs/~$artpaper-the-grid-content-form.docx
+docs/~$artpaper-the-grid-theme-form.docx
+docs/~$e-grid-smart-paper-content-form
+docs/~$e-grid-smart-paper-simulation-10.16.2020 a.docx
+
+.browserslistrc
+.nvmrc
+.prettierrc
+.editorconfig
+
+docs/.DS_Store
+docs/.DS_Store
+docs/.DS_Store
+docs/~$e-grid-smart-paper-simulation.docx
